@@ -1,3 +1,5 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace login
 {
     public partial class Login : Form
@@ -36,19 +38,32 @@ namespace login
             {
                 labelresultado.Text = "Usuario é obrigatorio!!!";
                 labelresultado.ForeColor = Color.Red;
+                return;
             }
 
-            else if (usuario == "vinicius.leandro" && senha == "12345")
+            if (senha == null || senha == "")
+            {
+                labelresultado.Text = "Senha é obrogatoria";
+                labelresultado.ForeColor= Color.Red;
+                return;
+            }
+
+            if (usuario == "vinicius.leandro" && senha == "12345")
             {
                 labelresultado.Text = "Autenticado com sucesso";
                 labelresultado.ForeColor = Color.Green;
             }
-            else
+            else if (usuario == "vinicius.leandro" && senha == "1234")
             {
                 labelresultado.Text = "Usuario ou senha incorretos...";
                 labelresultado.ForeColor = Color.Red;
             }
 
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -53,7 +53,6 @@
             textBoxsenha.Name = "textBoxsenha";
             textBoxsenha.Size = new Size(178, 23);
             textBoxsenha.TabIndex = 1;
-          
             // 
             // Entrar
             // 
@@ -85,6 +84,7 @@
             label2.Size = new Size(42, 15);
             label2.TabIndex = 4;
             label2.Text = "Senha:";
+            label2.Click += label2_Click;
             // 
             // label3
             // 

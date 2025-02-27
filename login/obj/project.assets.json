@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinicius.lmacedo\\source\\repos\\login\\login.csproj",
+      "projectUniqueName": "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\login\\login.csproj",
       "projectName": "login",
-      "projectPath": "C:\\Users\\vinicius.lmacedo\\source\\repos\\login\\login.csproj",
+      "projectPath": "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\login\\login.csproj",
       "packagesPath": "C:\\Users\\vinicius.lmacedo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinicius.lmacedo\\source\\repos\\login\\obj\\",
+      "outputPath": "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\login\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
