@@ -28,13 +28,14 @@ namespace login
         {
 
         }
-
+       
         private void Entrar_Click(object sender, EventArgs e)
         {
-            string usuario = textBoxUsuario.Text;
+            List<string> listaUsuarios = new List<string>() { "neymar.jr", "vinicius.leandro", "sorriso" };
+            string usuarioBuscado = textBoxUsuario.Text;
             string senha = textBoxsenha.Text;
 
-            if (usuario == null || usuario == "")
+            if (string.IsNullOrWhiteSpace(usuarioBuscado))
             {
                 labelresultado.Text = "Usuario é obrigatorio!!!";
                 labelresultado.ForeColor = Color.Red;
@@ -43,22 +44,33 @@ namespace login
 
             if (senha == null || senha == "")
             {
-                labelresultado.Text = "Senha é obrogatoria";
-                labelresultado.ForeColor= Color.Red;
-                return;
+                    labelresultado.Text = "Senha é obrigatorio!!!";
+                    labelresultado.ForeColor = Color.Red;
+                    return;
             }
 
-            if (usuario == "vinicius.leandro" && senha == "12345")
+            int posicaousuarioEncontrado = -1;
+            for (int i = 0; i < listaUsuarios.Count; i++)
+            {
+                if (usuarioBuscado == listaUsuarios[i])
+                {
+                    posicaousuarioEncontrado = i;
+                }
+            }
+
+            if (posicaousuarioEncontrado > -1 && senha == "12345")
             {
                 labelresultado.Text = "Autenticado com sucesso";
                 labelresultado.ForeColor = Color.Green;
-            }
-            else if (usuario == "vinicius.leandro" && senha == "1234")
-            {
-                labelresultado.Text = "Usuario ou senha incorretos...";
-                labelresultado.ForeColor = Color.Red;
+                return;
             }
 
+            else
+            {
+                labelresultado.Text = "Usuario ou senha incorretos..." ;
+                labelresultado.ForeColor = Color.Red;
+            }
+           
 
         }
 
