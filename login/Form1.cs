@@ -100,8 +100,16 @@ namespace login
         private void button2_Click(object sender, EventArgs e)
         {
 
+            bool temletraMaiuscula = false;
+            bool temlestraMinuscula = false;
+            bool temNumero = false;
+            bool temEspeciais = false;
+            bool naoTemEspaco = true;
+
             String usuariocq = usuarioc.Text;
             String senhacq = senhac.Text;
+
+            for (int i = 0; i < senhacq.Length; i++)
 
             if(string.IsNullOrWhiteSpace (senhacq)) 
             {
@@ -143,14 +151,6 @@ namespace login
                 return;
             }
 
-            if (!senhacq.Any(char.IsPunctuation))
-            {
-                resultado.Text = "a senha não pode ter espaço";
-                return;
-            }
-
-
-
             Boolean Usuario_encontrado = false;
             for (int i = 0; i < listaUsuarios.Count; i++)
             {
@@ -175,4 +175,4 @@ namespace login
 
         }
     }
-}
+} 
