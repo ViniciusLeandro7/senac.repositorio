@@ -31,3 +31,4 @@ C:\Users\vinicius.lmacedo\Documents\senac.repositorio\senac.repositorio\Calculad
 C:\Users\vinicius.lmacedo\Documents\senac.repositorio\senac.repositorio\Calculadora\obj\Debug\net8.0-windows\calculadora.pdb
 C:\Users\vinicius.lmacedo\Documents\senac.repositorio\senac.repositorio\Calculadora\obj\Debug\net8.0-windows\calculadora.genruntimeconfig.cache
 C:\Users\vinicius.lmacedo\Documents\senac.repositorio\senac.repositorio\Calculadora\obj\Debug\net8.0-windows\ref\calculadora.dll
+C:\Users\vinicius.lmacedo\Documents\senac.repositorio\senac.repositorio\Calculadora\obj\Debug\net8.0-windows\calculadora.Form2.resources
