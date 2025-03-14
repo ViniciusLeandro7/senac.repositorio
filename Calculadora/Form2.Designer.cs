@@ -28,176 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
-            perimetro = new TextBox();
-            volume = new TextBox();
-            textBox3 = new TextBox();
-            area = new TextBox();
+            rbtnQuadrado = new RadioButton();
+            rbtnTriangulo = new RadioButton();
+            rbtnRetangulo = new RadioButton();
             label1 = new Label();
-            Calcular = new Button();
-            resultado = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            label2 = new Label();
-            radioButton4 = new RadioButton();
-            comboBox1 = new ComboBox();
+            txtLado1 = new TextBox();
+            txtLado3 = new TextBox();
+            txtLado2 = new TextBox();
+            button1 = new Button();
+            lblResultado = new Label();
             SuspendLayout();
             // 
-            // perimetro
+            // rbtnQuadrado
             // 
-            perimetro.Location = new Point(11, 79);
-            perimetro.Name = "perimetro";
-            perimetro.Size = new Size(66, 23);
-            perimetro.TabIndex = 0;
-            perimetro.TextChanged += textBox1_TextChanged;
+            rbtnQuadrado.AutoSize = true;
+            rbtnQuadrado.Location = new Point(3, 114);
+            rbtnQuadrado.Name = "rbtnQuadrado";
+            rbtnQuadrado.Size = new Size(78, 19);
+            rbtnQuadrado.TabIndex = 0;
+            rbtnQuadrado.TabStop = true;
+            rbtnQuadrado.Text = "Quadrado";
+            rbtnQuadrado.UseVisualStyleBackColor = true;
             // 
-            // volume
+            // rbtnTriangulo
             // 
-            volume.Location = new Point(94, 79);
-            volume.Name = "volume";
-            volume.Size = new Size(66, 23);
-            volume.TabIndex = 1;
+            rbtnTriangulo.AutoSize = true;
+            rbtnTriangulo.Location = new Point(3, 139);
+            rbtnTriangulo.Name = "rbtnTriangulo";
+            rbtnTriangulo.Size = new Size(74, 19);
+            rbtnTriangulo.TabIndex = 1;
+            rbtnTriangulo.TabStop = true;
+            rbtnTriangulo.Text = "Triângulo";
+            rbtnTriangulo.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // rbtnRetangulo
             // 
-            textBox3.Location = new Point(259, 79);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(66, 23);
-            textBox3.TabIndex = 2;
-            // 
-            // area
-            // 
-            area.Location = new Point(176, 79);
-            area.Name = "area";
-            area.Size = new Size(66, 23);
-            area.TabIndex = 3;
+            rbtnRetangulo.AutoSize = true;
+            rbtnRetangulo.Location = new Point(3, 164);
+            rbtnRetangulo.Name = "rbtnRetangulo";
+            rbtnRetangulo.Size = new Size(79, 19);
+            rbtnRetangulo.TabIndex = 2;
+            rbtnRetangulo.TabStop = true;
+            rbtnRetangulo.Text = "Retângulo";
+            rbtnRetangulo.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(27, 252);
             label1.Name = "label1";
-            label1.Size = new Size(0, 15);
-            label1.TabIndex = 4;
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
             // 
-            // Calcular
+            // txtLado1
             // 
-            Calcular.Location = new Point(136, 355);
-            Calcular.Name = "Calcular";
-            Calcular.Size = new Size(106, 37);
-            Calcular.TabIndex = 5;
-            Calcular.Text = "calcular";
-            Calcular.UseVisualStyleBackColor = true;
-            Calcular.Click += Calcular_Click;
+            txtLado1.Location = new Point(3, 32);
+            txtLado1.Name = "txtLado1";
+            txtLado1.Size = new Size(100, 23);
+            txtLado1.TabIndex = 4;
             // 
-            // resultado
+            // txtLado3
             // 
-            resultado.AutoSize = true;
-            resultado.Location = new Point(131, 127);
-            resultado.Name = "resultado";
-            resultado.Size = new Size(59, 15);
-            resultado.TabIndex = 6;
-            resultado.Text = "Resultado";
+            txtLado3.Location = new Point(3, 61);
+            txtLado3.Name = "txtLado3";
+            txtLado3.Size = new Size(100, 23);
+            txtLado3.TabIndex = 5;
             // 
-            // radioButton1
+            // txtLado2
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(11, 209);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(49, 19);
-            radioButton1.TabIndex = 10;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Area";
-            radioButton1.UseVisualStyleBackColor = true;
+            txtLado2.Location = new Point(119, 32);
+            txtLado2.Name = "txtLado2";
+            txtLado2.Size = new Size(100, 23);
+            txtLado2.TabIndex = 6;
             // 
-            // radioButton2
+            // button1
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(12, 234);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(77, 19);
-            radioButton2.TabIndex = 11;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Perimetro";
-            radioButton2.UseVisualStyleBackColor = true;
+            button1.Location = new Point(12, 213);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 7;
+            button1.Text = "Calcular";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // radioButton3
+            // lblResultado
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(12, 284);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(65, 19);
-            radioButton3.TabIndex = 12;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Volume";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(7, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 15);
-            label2.TabIndex = 13;
-            label2.Text = "Calculadora Quadrado Retangulo";
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(12, 259);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(94, 19);
-            radioButton4.TabIndex = 14;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "radioButton4";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 155);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 15;
+            lblResultado.AutoSize = true;
+            lblResultado.Location = new Point(140, 69);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(59, 15);
+            lblResultado.TabIndex = 8;
+            lblResultado.Text = "Resultado";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(395, 450);
-            Controls.Add(comboBox1);
-            Controls.Add(radioButton4);
-            Controls.Add(label2);
-            Controls.Add(radioButton3);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
-            Controls.Add(resultado);
-            Controls.Add(Calcular);
+            ClientSize = new Size(316, 355);
+            Controls.Add(lblResultado);
+            Controls.Add(button1);
+            Controls.Add(txtLado2);
+            Controls.Add(txtLado3);
+            Controls.Add(txtLado1);
             Controls.Add(label1);
-            Controls.Add(area);
-            Controls.Add(textBox3);
-            Controls.Add(volume);
-            Controls.Add(perimetro);
+            Controls.Add(rbtnRetangulo);
+            Controls.Add(rbtnTriangulo);
+            Controls.Add(rbtnQuadrado);
             Name = "Form2";
-            Text = "Form2";
             ResumeLayout(false);
             PerformLayout();
         }
 
-        #endregion
-
-        private TextBox perimetro;
-        private TextBox volume;
-        private TextBox textBox3;
-        private TextBox area;
+        private RadioButton rbtnQuadrado;
+        private RadioButton rbtnTriangulo;
+        private RadioButton rbtnRetangulo;
         private Label label1;
-        private Button Calcular;
-        private Label resultado;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private Label label2;
-        private RadioButton radioButton4;
-        private ComboBox comboBox1;
+        private TextBox txtLado1;
+        private TextBox txtLado3;
+        private TextBox txtLado2;
+        private Button button1;
+        private Label lblResultado;
+        
     }
 }

@@ -46,6 +46,7 @@
             radioButton4 = new RadioButton();
             label2 = new Label();
             button4 = new Button();
+            esferaToolStripMenuItem = new ToolStripMenuItem();
             Menu.SuspendLayout();
             SuspendLayout();
             // 
@@ -82,6 +83,7 @@
             valor1.Name = "valor1";
             valor1.Size = new Size(121, 23);
             valor1.TabIndex = 6;
+            valor1.TextChanged += valor1_TextChanged;
             // 
             // Resultado
             // 
@@ -133,7 +135,7 @@
             // 
             // menuToolStripMenuItem
             // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, formatosQRToolStripMenuItem });
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, formatosQRToolStripMenuItem, esferaToolStripMenuItem });
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             menuToolStripMenuItem.Size = new Size(50, 20);
             menuToolStripMenuItem.Text = "Menu";
@@ -141,14 +143,14 @@
             // newToolStripMenuItem
             // 
             newToolStripMenuItem.Name = "newToolStripMenuItem";
-            newToolStripMenuItem.Size = new Size(180, 22);
+            newToolStripMenuItem.Size = new Size(148, 22);
             newToolStripMenuItem.Text = "new";
             newToolStripMenuItem.Click += newToolStripMenuItem_Click;
             // 
             // formatosQRToolStripMenuItem
             // 
             formatosQRToolStripMenuItem.Name = "formatosQRToolStripMenuItem";
-            formatosQRToolStripMenuItem.Size = new Size(180, 22);
+            formatosQRToolStripMenuItem.Size = new Size(148, 22);
             formatosQRToolStripMenuItem.Text = "Formatos Q/R";
             formatosQRToolStripMenuItem.Click += formatosQRToolStripMenuItem_Click;
             // 
@@ -220,6 +222,13 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // esferaToolStripMenuItem
+            // 
+            esferaToolStripMenuItem.Name = "esferaToolStripMenuItem";
+            esferaToolStripMenuItem.Size = new Size(180, 22);
+            esferaToolStripMenuItem.Text = "Esfera";
+            esferaToolStripMenuItem.Click += esferaToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -270,5 +279,6 @@
         private Label label2;
         private Button button4;
         private ToolStripMenuItem formatosQRToolStripMenuItem;
+        private ToolStripMenuItem esferaToolStripMenuItem;
     }
 }
