@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             btnCalcular = new Button();
-            lblCircunferencia = new Label();
-            lblPerimetro = new Label();
-            lblArea = new Label();
-            lblDiametro = new Label();
             txtRaio = new TextBox();
             rbtnDiametro = new RadioButton();
             rbtnPerimetro = new RadioButton();
@@ -43,49 +39,13 @@
             // 
             // btnCalcular
             // 
-            btnCalcular.Location = new Point(108, 327);
+            btnCalcular.Location = new Point(7, 189);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(75, 27);
             btnCalcular.TabIndex = 0;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = true;
             btnCalcular.Click += btnCalcular_Click;
-            // 
-            // lblCircunferencia
-            // 
-            lblCircunferencia.AutoSize = true;
-            lblCircunferencia.Location = new Point(18, 253);
-            lblCircunferencia.Name = "lblCircunferencia";
-            lblCircunferencia.Size = new Size(84, 15);
-            lblCircunferencia.TabIndex = 1;
-            lblCircunferencia.Text = "Circunferencia";
-            // 
-            // lblPerimetro
-            // 
-            lblPerimetro.AutoSize = true;
-            lblPerimetro.Location = new Point(151, 253);
-            lblPerimetro.Name = "lblPerimetro";
-            lblPerimetro.Size = new Size(59, 15);
-            lblPerimetro.TabIndex = 2;
-            lblPerimetro.Text = "Perimetro";
-            // 
-            // lblArea
-            // 
-            lblArea.AutoSize = true;
-            lblArea.Location = new Point(123, 216);
-            lblArea.Name = "lblArea";
-            lblArea.Size = new Size(31, 15);
-            lblArea.TabIndex = 3;
-            lblArea.Text = "Area";
-            // 
-            // lblDiametro
-            // 
-            lblDiametro.AutoSize = true;
-            lblDiametro.Location = new Point(111, 201);
-            lblDiametro.Name = "lblDiametro";
-            lblDiametro.Size = new Size(56, 15);
-            lblDiametro.TabIndex = 4;
-            lblDiametro.Text = "Diametro";
             // 
             // txtRaio
             // 
@@ -141,7 +101,7 @@
             // lblResultado
             // 
             lblResultado.AutoSize = true;
-            lblResultado.Location = new Point(202, 132);
+            lblResultado.Location = new Point(158, 82);
             lblResultado.Name = "lblResultado";
             lblResultado.Size = new Size(59, 15);
             lblResultado.TabIndex = 10;
@@ -158,10 +118,6 @@
             Controls.Add(rbtnPerimetro);
             Controls.Add(rbtnDiametro);
             Controls.Add(txtRaio);
-            Controls.Add(lblDiametro);
-            Controls.Add(lblArea);
-            Controls.Add(lblPerimetro);
-            Controls.Add(lblCircunferencia);
             Controls.Add(btnCalcular);
             Name = "Form3";
             Text = "Area";
@@ -172,10 +128,6 @@
         #endregion
 
         private Button btnCalcular;
-        private Label lblCircunferencia;
-        private Label lblPerimetro;
-        private Label lblArea;
-        private Label lblDiametro;
         private TextBox txtRaio;
         private RadioButton rbtnDiametro;
         private RadioButton rbtnPerimetro;
