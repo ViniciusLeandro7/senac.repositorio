@@ -39,7 +39,7 @@
             // 
             // btnCalcular
             // 
-            btnCalcular.Location = new Point(7, 189);
+            btnCalcular.Location = new Point(12, 219);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(75, 27);
             btnCalcular.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // txtRaio
             // 
-            txtRaio.Location = new Point(108, 32);
+            txtRaio.Location = new Point(12, 12);
             txtRaio.Name = "txtRaio";
             txtRaio.Size = new Size(109, 23);
             txtRaio.TabIndex = 5;
@@ -57,7 +57,7 @@
             // rbtnDiametro
             // 
             rbtnDiametro.AutoSize = true;
-            rbtnDiametro.Location = new Point(8, 82);
+            rbtnDiametro.Location = new Point(8, 67);
             rbtnDiametro.Name = "rbtnDiametro";
             rbtnDiametro.Size = new Size(74, 19);
             rbtnDiametro.TabIndex = 6;
@@ -68,7 +68,7 @@
             // rbtnPerimetro
             // 
             rbtnPerimetro.AutoSize = true;
-            rbtnPerimetro.Location = new Point(8, 107);
+            rbtnPerimetro.Location = new Point(10, 92);
             rbtnPerimetro.Name = "rbtnPerimetro";
             rbtnPerimetro.Size = new Size(77, 19);
             rbtnPerimetro.TabIndex = 7;
@@ -79,7 +79,7 @@
             // rbtnArea
             // 
             rbtnArea.AutoSize = true;
-            rbtnArea.Location = new Point(8, 132);
+            rbtnArea.Location = new Point(12, 117);
             rbtnArea.Name = "rbtnArea";
             rbtnArea.Size = new Size(49, 19);
             rbtnArea.TabIndex = 8;
@@ -90,7 +90,7 @@
             // rbtnVolume
             // 
             rbtnVolume.AutoSize = true;
-            rbtnVolume.Location = new Point(8, 157);
+            rbtnVolume.Location = new Point(12, 142);
             rbtnVolume.Name = "rbtnVolume";
             rbtnVolume.Size = new Size(65, 19);
             rbtnVolume.TabIndex = 9;
@@ -101,7 +101,7 @@
             // lblResultado
             // 
             lblResultado.AutoSize = true;
-            lblResultado.Location = new Point(158, 82);
+            lblResultado.Location = new Point(127, 20);
             lblResultado.Name = "lblResultado";
             lblResultado.Size = new Size(59, 15);
             lblResultado.TabIndex = 10;
@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(346, 450);
+            ClientSize = new Size(215, 297);
             Controls.Add(lblResultado);
             Controls.Add(rbtnVolume);
             Controls.Add(rbtnArea);

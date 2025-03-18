@@ -40,19 +40,19 @@
             menuToolStripMenuItem = new ToolStripMenuItem();
             newToolStripMenuItem = new ToolStripMenuItem();
             formatosQRToolStripMenuItem = new ToolStripMenuItem();
+            esferaToolStripMenuItem = new ToolStripMenuItem();
             Soma = new RadioButton();
             radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
             radioButton4 = new RadioButton();
             label2 = new Label();
             button4 = new Button();
-            esferaToolStripMenuItem = new ToolStripMenuItem();
             Menu.SuspendLayout();
             SuspendLayout();
             // 
             // Calcular
             // 
-            Calcular.Location = new Point(90, 302);
+            Calcular.Location = new Point(42, 277);
             Calcular.Name = "Calcular";
             Calcular.Size = new Size(94, 33);
             Calcular.TabIndex = 0;
@@ -96,7 +96,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(81, 389);
+            button1.Location = new Point(90, 323);
             button1.Name = "button1";
             button1.Size = new Size(33, 33);
             button1.TabIndex = 8;
@@ -106,7 +106,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(0, 389);
+            button2.Location = new Point(6, 323);
             button2.Name = "button2";
             button2.Size = new Size(33, 33);
             button2.TabIndex = 9;
@@ -116,7 +116,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(42, 389);
+            button3.Location = new Point(45, 323);
             button3.Name = "button3";
             button3.Size = new Size(33, 33);
             button3.TabIndex = 10;
@@ -129,7 +129,7 @@
             Menu.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             Menu.Location = new Point(0, 0);
             Menu.Name = "Menu";
-            Menu.Size = new Size(299, 24);
+            Menu.Size = new Size(226, 24);
             Menu.TabIndex = 11;
             Menu.Text = "Menu";
             // 
@@ -143,16 +143,23 @@
             // newToolStripMenuItem
             // 
             newToolStripMenuItem.Name = "newToolStripMenuItem";
-            newToolStripMenuItem.Size = new Size(148, 22);
+            newToolStripMenuItem.Size = new Size(180, 22);
             newToolStripMenuItem.Text = "new";
             newToolStripMenuItem.Click += newToolStripMenuItem_Click;
             // 
             // formatosQRToolStripMenuItem
             // 
             formatosQRToolStripMenuItem.Name = "formatosQRToolStripMenuItem";
-            formatosQRToolStripMenuItem.Size = new Size(148, 22);
+            formatosQRToolStripMenuItem.Size = new Size(180, 22);
             formatosQRToolStripMenuItem.Text = "Formatos Q/R";
             formatosQRToolStripMenuItem.Click += formatosQRToolStripMenuItem_Click;
+            // 
+            // esferaToolStripMenuItem
+            // 
+            esferaToolStripMenuItem.Name = "esferaToolStripMenuItem";
+            esferaToolStripMenuItem.Size = new Size(180, 22);
+            esferaToolStripMenuItem.Text = "Esfera";
+            esferaToolStripMenuItem.Click += esferaToolStripMenuItem_Click;
             // 
             // Soma
             // 
@@ -214,7 +221,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(120, 389);
+            button4.Location = new Point(132, 323);
             button4.Name = "button4";
             button4.Size = new Size(30, 33);
             button4.TabIndex = 17;
@@ -222,18 +229,11 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // esferaToolStripMenuItem
-            // 
-            esferaToolStripMenuItem.Name = "esferaToolStripMenuItem";
-            esferaToolStripMenuItem.Size = new Size(180, 22);
-            esferaToolStripMenuItem.Text = "Esfera";
-            esferaToolStripMenuItem.Click += esferaToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(299, 450);
+            ClientSize = new Size(226, 450);
             Controls.Add(button4);
             Controls.Add(label2);
             Controls.Add(radioButton4);

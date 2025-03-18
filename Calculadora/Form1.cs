@@ -174,7 +174,7 @@ namespace calculadora
 
             if (!valor1q.All(char.IsNumber))
             {
-                Resultado.Text = "O valor 1 deve ser um numero";
+                Resultado.Text = "O valor deve ser um numero";
                 return;
             }
 

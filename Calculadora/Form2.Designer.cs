@@ -123,7 +123,7 @@
             // 
             // Form2
             // 
-            ClientSize = new Size(316, 355);
+            ClientSize = new Size(230, 287);
             Controls.Add(lblResultado);
             Controls.Add(button1);
             Controls.Add(txtLado2);
@@ -134,6 +134,7 @@
             Controls.Add(rbtnTriangulo);
             Controls.Add(rbtnQuadrado);
             Name = "Form2";
+            Text = " ";
             ResumeLayout(false);
             PerformLayout();
         }
