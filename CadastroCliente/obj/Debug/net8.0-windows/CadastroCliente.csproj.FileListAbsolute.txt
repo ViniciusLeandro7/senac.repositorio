@@ -1,0 +1,16 @@
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.exe
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.deps.json
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.runtimeconfig.json
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.dll
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.pdb
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.Form1.resources
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.csproj.GenerateResource.cache
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.AssemblyInfoInputs.cache
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.AssemblyInfo.cs
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.csproj.CoreCompileInputs.cache
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.dll
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\refint\CadastroCliente.dll
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.pdb
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.genruntimeconfig.cache
+C:\Users\vinicius.lmacedo\source\repos\CadastroCliente\CadastroCliente\obj\Debug\net8.0-windows\ref\CadastroCliente.dll
