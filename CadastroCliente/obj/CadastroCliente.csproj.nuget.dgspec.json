@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinicius.lmacedo\\source\\repos\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj": {}
+    "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\CadastroCliente\\CadastroCliente.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinicius.lmacedo\\source\\repos\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj": {
+    "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\CadastroCliente\\CadastroCliente.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinicius.lmacedo\\source\\repos\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj",
+        "projectUniqueName": "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\CadastroCliente\\CadastroCliente.csproj",
         "projectName": "CadastroCliente",
-        "projectPath": "C:\\Users\\vinicius.lmacedo\\source\\repos\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj",
+        "projectPath": "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\CadastroCliente\\CadastroCliente.csproj",
         "packagesPath": "C:\\Users\\vinicius.lmacedo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinicius.lmacedo\\source\\repos\\CadastroCliente\\CadastroCliente\\obj\\",
+        "outputPath": "C:\\Users\\vinicius.lmacedo\\Documents\\senac.repositorio\\senac.repositorio\\CadastroCliente\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
