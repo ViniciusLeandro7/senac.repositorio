@@ -36,7 +36,18 @@ namespace CadastroCliente
             if (!ValidarCampos())
                 return;
 
-            
+            if (listaClientes.Any(c => c.Email == textBox4.Text))
+            {
+                MessageBox.Show("O email já está cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (listaClientes.Any(c => c.Telefone == maskedTextBox3.Text))
+            {
+                MessageBox.Show("O telefone já está cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Cliente novoCliente = new Cliente
             {
                 Id = contadorId++, 
@@ -70,9 +81,21 @@ namespace CadastroCliente
             MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             LimparCampos();
+
+            ExibirClientesCadastrados();
         }
 
-        
+        private void ExibirClientesCadastrados()
+        {
+            string detalhesClientes = "Clientes Cadastrados:\n";
+            foreach (var cliente in listaClientes)
+            {
+                detalhesClientes += $"ID: {cliente.Id}, Nome: {cliente.Nome}, Telefone: {cliente.Telefone}\n";
+            }
+            Console.WriteLine(detalhesClientes);
+        }
+
+
         private bool ValidarCampos()
         {
             string mensagemErro = ""; 
@@ -93,7 +116,7 @@ namespace CadastroCliente
                 mensagemErro += "- O campo CEP deve estar no formato válido do Brasil.\n";
 
             if (!ValidarTelefone(maskedTextBox3.Text))
-                mensagemErro += "- O campo Telefone deve estar no formato válido do Brasil.\n";
+                mensagemErro += "- O campo Telefone deve estar no formato válido.\n";
 
             if (!ValidarData(maskedTextBox1.Text))
                 mensagemErro += "- O campo Data de Nascimento deve estar no formato válido (dia/mês/Ano).\n";
@@ -117,30 +140,25 @@ namespace CadastroCliente
         {
             if (cep.Length == 9 && cep.Contains("-"))
             {
-                // Divide o CEP em duas partes (antes e depois do hífen) e verifica se são números
                 string[] partesCep = cep.Split('-');
                 if (partesCep.Length == 2 && partesCep[0].Length == 5 && partesCep[1].Length == 3)
                 {
-                    // Verifica se ambas as partes são números
                     return int.TryParse(partesCep[0], out _) && int.TryParse(partesCep[1], out _);
                 }
             }
             return false;
         }
 
-
         private bool ValidarTelefone(string telefone)
         {
-            if (telefone.Length == 14 && telefone.StartsWith("()") && telefone.Contains("()") && telefone.Contains("-"))
+            if (telefone.StartsWith("(") && telefone.Contains(")") && telefone.Contains("-"))
             {
-
                 string numerosTelefone = telefone.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
                 return numerosTelefone.Length == 11 && long.TryParse(numerosTelefone, out _);
             }
             return false;
         }
 
-        
         private bool ValidarData(string data)
         {
             DateTime temp;
