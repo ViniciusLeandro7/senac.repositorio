@@ -63,7 +63,8 @@
             button1 = new Button();
             label17 = new Label();
             label8 = new Label();
-            listBoxClientes = new ListBox();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -363,27 +364,26 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(455, 310);
+            label8.Location = new Point(8, 393);
             label8.Name = "label8";
             label8.Size = new Size(10, 15);
             label8.TabIndex = 39;
             label8.Text = ":";
             // 
-            // listBoxClientes
+            // dataGridView1
             // 
-            listBoxClientes.FormattingEnabled = true;
-            listBoxClientes.ItemHeight = 15;
-            listBoxClientes.Location = new Point(12, 380);
-            listBoxClientes.Name = "listBoxClientes";
-            listBoxClientes.Size = new Size(74, 49);
-            listBoxClientes.TabIndex = 40;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(531, 331);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.TabIndex = 40;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(872, 461);
-            Controls.Add(listBoxClientes);
+            ClientSize = new Size(872, 664);
+            Controls.Add(dataGridView1);
             Controls.Add(label8);
             Controls.Add(label17);
             Controls.Add(button1);
@@ -421,6 +421,7 @@
             Controls.Add(textBox1);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -462,6 +463,6 @@
         private Button button1;
         private Label label17;
         private Label label8;
-        private ListBox listBoxClientes;
+        private DataGridView dataGridView1;
     }
 }

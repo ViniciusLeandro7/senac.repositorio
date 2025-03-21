@@ -8,26 +8,32 @@ namespace CadastroCliente
     public partial class Form1 : Form
     {
         List<ClassCliente> Cliente = [];
+      
+
         private List<Cliente> listaClientes = new List<Cliente>();
+        private readonly BindingSource BindingSource = [];
         private List<Endereco> listaEnderecos = new List<Endereco>();
+
         private int contadorId = 1;
 
         public Form1()
         {
             InitializeComponent();
             ClassEndereco enderecoVinicius = new ClassEndereco() { longradouro = "casa", numero = "667", complemento = "apt102", bairro = "vila clementino", cep = "040250130", estado = "São Paulo", municipio = "SP" };
-            ClassCliente Vinicius = new ClassCliente() { Id = 0, Nome = "vinicius", dataNascimento = "22/09/2004", etnia = Etnia.Preto, Tipo = TipoCliente.PF };
+            ClassCliente Vinicius = new ClassCliente() { Id = 1, Nome = "vinicius", dataNascimento = "22/09/2004", telefone = "11954842582", etnia = Etnia.Preto, Tipo = TipoCliente.PF, Genero = Genero.Masculino, email = "vinicius@email.com", };
             Cliente.Add(Vinicius);
 
 
             ClassEndereco enderecoSebastiana = new ClassEndereco() { longradouro = "casa", numero = "25", complemento = "casa", bairro = "sao jose", cep = "04843510", estado = "São Paulo", municipio = "SP" };
-            ClassCliente Sebastiana = new ClassCliente() { Id = 1, Nome = "sebastiana", dataNascimento = "01/07/1966", etnia = Etnia.Branco, Tipo = TipoCliente.PF };
+            ClassCliente Sebastiana = new ClassCliente() { Id = 2, Nome = "sebastiana", dataNascimento = "01/07/1966", telefone = "11954842583", etnia = Etnia.Branco, Tipo = TipoCliente.PF, Genero = Genero.Feminino, email = "sebastiana@email.com" };
             Cliente.Add(Sebastiana);
 
             ClassEndereco enderecoHermogenes = new ClassEndereco() { longradouro = "casa", numero = "25", complemento = "casa", bairro = "sao jose", cep = "04843510", estado = "São Paulo", municipio = "SP" };
-            ClassCliente Hermogenes = new ClassCliente() { Id = 1, Nome = "sebastiana", dataNascimento = "01/07/1966", etnia = Etnia.Branco, Tipo = TipoCliente.PF };
+            ClassCliente Hermogenes = new ClassCliente() { Id = 3, Nome = "hermogenes", dataNascimento = "01/07/1966", telefone = "11954842584", etnia = Etnia.Preto, Tipo = TipoCliente.PF, Genero = Genero.Masculino, email = "hermogenes@email.com" };
             Cliente.Add(Hermogenes);
 
+            BindingSource.DataSource = Cliente;
+            dataGridView1.DataSource = BindingSource;
 
         }
 
@@ -39,6 +45,12 @@ namespace CadastroCliente
             if (listaClientes.Any(c => c.Email == textBox4.Text))
             {
                 MessageBox.Show("O email já está cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (listaClientes.Any(c => c.Telefone == maskedTextBox3.Text))
+            {
+                MessageBox.Show("O telefone já está cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -77,6 +89,7 @@ namespace CadastroCliente
             
             listaClientes.Add(novoCliente);
             listaEnderecos.Add(novoEndereco);
+            BindingSource.ResetBindings(false);
 
             MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
