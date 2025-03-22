@@ -15,11 +15,9 @@ namespace CadastroCliente
         public string email { get; set; }
         public string nomesocial { get; set; }
         public bool estrangeiro { get; set; }
-        public string Etnia { get; set; }
-        public int tipo { get; set; }
         public TipoCliente Tipo { get; set; }
 
-        public ClassEndereco endereco { get; set; }
+        public ClassEndereco Endereco { get; set; }
 
         public Etnia etnia { get; set; }
 

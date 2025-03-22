@@ -11,25 +11,25 @@ namespace CadastroCliente
       
 
         private List<Cliente> listaClientes = new List<Cliente>();
+      
         private readonly BindingSource BindingSource = [];
-        private List<Endereco> listaEnderecos = new List<Endereco>();
 
-        private int contadorId = 1;
+        private int contadorId = 0;
 
         public Form1()
         {
             InitializeComponent();
-            ClassEndereco enderecoVinicius = new ClassEndereco() { longradouro = "casa", numero = "667", complemento = "apt102", bairro = "vila clementino", cep = "040250130", estado = "São Paulo", municipio = "SP" };
-            ClassCliente Vinicius = new ClassCliente() { Id = 1, Nome = "vinicius", dataNascimento = "22/09/2004", telefone = "11954842582", etnia = Etnia.Preto, Tipo = TipoCliente.PF, Genero = Genero.Masculino, email = "vinicius@email.com", };
+            ClassEndereco enderecoVinicius = new ClassEndereco() { longradouro = "Dupret", numero = "667", complemento = "apt102", bairro = "vila clementino", cep = "040250130", estado = "São Paulo", municipio = "SP"};
+            ClassCliente Vinicius = new ClassCliente() { Id = 1, Nome = "vinicius", dataNascimento = "22/09/2004", telefone = "11954842582", etnia = Etnia.Preto, Tipo = TipoCliente.PF, Genero = Genero.Masculino, email = "vinicius@email.com", Endereco = enderecoVinicius };
             Cliente.Add(Vinicius);
 
 
-            ClassEndereco enderecoSebastiana = new ClassEndereco() { longradouro = "casa", numero = "25", complemento = "casa", bairro = "sao jose", cep = "04843510", estado = "São Paulo", municipio = "SP" };
-            ClassCliente Sebastiana = new ClassCliente() { Id = 2, Nome = "sebastiana", dataNascimento = "01/07/1966", telefone = "11954842583", etnia = Etnia.Branco, Tipo = TipoCliente.PF, Genero = Genero.Feminino, email = "sebastiana@email.com" };
+            ClassEndereco enderecoSebastiana = new ClassEndereco() { longradouro = "lister", numero = "25", complemento = "casa", bairro = "sao jose", cep = "04843510", estado = "São Paulo", municipio = "SP" };
+            ClassCliente Sebastiana = new ClassCliente() { Id = 2, Nome = "sebastiana", dataNascimento = "01/07/1966", telefone = "11954842583", etnia = Etnia.Branco, Tipo = TipoCliente.PF, Genero = Genero.Feminino, email = "sebastiana@email.com", Endereco = enderecoSebastiana };
             Cliente.Add(Sebastiana);
 
-            ClassEndereco enderecoHermogenes = new ClassEndereco() { longradouro = "casa", numero = "25", complemento = "casa", bairro = "sao jose", cep = "04843510", estado = "São Paulo", municipio = "SP" };
-            ClassCliente Hermogenes = new ClassCliente() { Id = 3, Nome = "hermogenes", dataNascimento = "01/07/1966", telefone = "11954842584", etnia = Etnia.Preto, Tipo = TipoCliente.PF, Genero = Genero.Masculino, email = "hermogenes@email.com" };
+            ClassEndereco enderecoHermogenes = new ClassEndereco() { longradouro = "lister", numero = "25", complemento = "casa", bairro = "sao jose", cep = "04843510", estado = "São Paulo", municipio = "SP" };
+            ClassCliente Hermogenes = new ClassCliente() { Id = 3, Nome = "hermogenes", dataNascimento = "01/07/1966", telefone = "11954842584", etnia = Etnia.Preto, Tipo = TipoCliente.PF, Genero = Genero.Masculino, email = "hermogenes@email.com", Endereco = enderecoHermogenes };
             Cliente.Add(Hermogenes);
 
             BindingSource.DataSource = Cliente;
@@ -37,10 +37,58 @@ namespace CadastroCliente
 
         }
 
+        public int NovoId()
+        {
+            int id = Cliente[Cliente.Count - 1].Id;
+            int idNovo = id + 1;
+
+            return idNovo;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+         
+            Cliente novoCliente = new Cliente
+            {
+                Id = NovoId(),
+                Nome = textBox1.Text,
+                Telefone = maskedTextBox3.Text,
+                DataNascimento = maskedTextBox1.Text,
+                NomeSocial = textBox5.Text,
+                Genero = comboBox1.Text,
+                Email = textBox4.Text,
+                CategoriaPF = radioButton2.Checked,
+                CategoriaPJ = radioButton1.Checked,
+                Estrangeiro = checkBox1.Checked
+            };
+
+            BindingSource.ResetBindings(false);
+
+
+            Endereco novoEndereco = new Endereco
+            {
+                Cep = maskedTextBox2.Text,
+                Logradouro = textBox6.Text,
+                Complemento = textBox8.Text,
+                Bairro = textBox9.Text,
+                Numero = textBox7.Text,
+                Municipio = textBox10.Text,
+                Estado = comboBox3.Text
+            };
+
+            TipoCliente tipo;
+            if (radioButton2.Checked == true)
+            {
+                tipo = TipoCliente.PF;
+            }
+            else
+            {
+                tipo = TipoCliente.PJ;
+            }
+
             if (!ValidarCampos())
                 return;
+
 
             if (listaClientes.Any(c => c.Email == textBox4.Text))
             {
@@ -54,58 +102,16 @@ namespace CadastroCliente
                 return;
             }
 
-            if (listaClientes.Any(c => c.Telefone == maskedTextBox3.Text))
-            {
-                MessageBox.Show("O telefone já está cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-            Cliente novoCliente = new Cliente
-            {
-                Id = contadorId++, 
-                Nome = textBox1.Text,
-                Telefone = maskedTextBox3.Text,
-                DataNascimento = maskedTextBox1.Text,
-                NomeSocial = textBox5.Text,
-                Genero = comboBox1.Text,
-                Email = textBox4.Text,
-                CategoriaPF = radioButton2.Checked,
-                CategoriaPJ = radioButton1.Checked,
-                Estrangeiro = checkBox1.Checked
-            };
-
-            
-            Endereco novoEndereco = new Endereco
-            {
-                Cep = maskedTextBox2.Text,
-                Logradouro = textBox6.Text,
-                Complemento = textBox8.Text,
-                Bairro = textBox9.Text,
-                Numero = textBox7.Text,
-                Municipio = textBox10.Text,
-                Estado = comboBox3.Text
-            };
-
-            
             listaClientes.Add(novoCliente);
-            listaEnderecos.Add(novoEndereco);
+ 
             BindingSource.ResetBindings(false);
 
             MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             LimparCampos();
 
-            ExibirClientesCadastrados();
-        }
-
-        private void ExibirClientesCadastrados()
-        {
-            string detalhesClientes = "Clientes Cadastrados:\n";
-            foreach (var cliente in listaClientes)
-            {
-                detalhesClientes += $"ID: {cliente.Id}, Nome: {cliente.Nome}, Telefone: {cliente.Telefone}\n";
-            }
-            Console.WriteLine(detalhesClientes);
+            
         }
 
 
