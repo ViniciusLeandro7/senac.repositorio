@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS livros (
+CREATE TABLE IF NOT EXISTS livro (
     id INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(100) NOT NULL,
     data_publicacao DATETIME NOT NULL,
@@ -7,8 +7,21 @@ CREATE TABLE IF NOT EXISTS livros (
     isbn VARCHAR(17) NOT NULL UNIQUE,
     id_genero INT NOT NULL,
     id_editora INT NOT NULL,
-    id_autor INT NOT NULL
+    id_autor INT NOT NULL,
+    FOREIGN KEY (id_genero)
+		REFERENCES genero (id),
+	FOREIGN KEY (id_editora)
+		REFERENCES editora (id),
+	FOREIGN KEY (id_autor)
+		REFERENCES autor (id)
 );
+
+DROP TABLE livro;
+
+SELECT 
+    *
+FROM
+    livro;
 
 INSERT INTO livro (
  titulo, data_publicacao, preco, numero_paginas, isbn, id_genero, id_editora, id_autor
@@ -55,7 +68,7 @@ NULL,
 ),
 (
 'A lenda do macaco de quinze centímetros e meio',
-'1957-11-09 00:00::00',
+'1957-11-09 00:00:00',
 120.99,
 969,
 '978-0-06-112008-4',
@@ -65,7 +78,7 @@ NULL,
 ),
 (
 '16 toneladas: Adaptação novel',
-'1989-11-09 00:00::00',
+'1989-11-09 00:00:00',
 190.99,
 1000,
 '978-1-4028-9462-6',
@@ -155,7 +168,7 @@ NULL,
 ),
 (
 'As aventuras de π',
-'25.04.1999',
+'1999-04-25',
 500.99,
 1100,
 4,
@@ -221,7 +234,3 @@ FROM
     genero
     editora,
     autor;
-where 
-	livros.id_genero = genero.id
-	AND livros.id_editora = editora.id;
-	AND livros.id_autor = autor.id;
