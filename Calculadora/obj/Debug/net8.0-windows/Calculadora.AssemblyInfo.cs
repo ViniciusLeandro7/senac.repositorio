@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("calculadora")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Calculadora")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b45d7e3e7bdbf84f793a91d3ee4a3f08478c624e")]
-[assembly: System.Reflection.AssemblyProductAttribute("calculadora")]
-[assembly: System.Reflection.AssemblyTitleAttribute("calculadora")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94010619518d72e7c8decfc548dba2a161e5d16e")]
+[assembly: System.Reflection.AssemblyProductAttribute("Calculadora")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Calculadora")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

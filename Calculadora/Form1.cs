@@ -1,213 +1,179 @@
-namespace calculadora
+namespace Calculadora
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void Calcular_Click(object sender, EventArgs e)
+        private bool Validar()
         {
-            string valor1q = valor1.Text;
-            string valor2q = valor2.Text;
-            string operacao = label2.Text;
-            double res;
+            string valor1 = txtValor1.Text;
+            string valor2 = txtValor2.Text;
 
-            if (!valor1q.All(char.IsNumber))
+            if (string.IsNullOrWhiteSpace(valor1) || string.IsNullOrWhiteSpace(valor2))
             {
-                Resultado.Text = "O valor 1 deve ser um numero";
-                return;
+                lblErro.Text = "Valor obrigatório";
+                return false;
             }
 
-            if (string.IsNullOrEmpty(valor1q) || string.IsNullOrEmpty(valor2q))
+            try
             {
-                Resultado.Text = "digite um numero";
-                return;
+                Convert.ToDouble(valor1);
+                Convert.ToDouble(valor2);
+                return true;
             }
+            catch
+            {
+                lblErro.Text = "Digite somente números";
+                return false;
+            }
+        }
 
-            double doubleValor1 = Convert.ToDouble(valor1q);
-            double doubleValor2 = Convert.ToDouble(valor2q);
+        private void Calcular()
+        {
+            string valor1 = txtValor1.Text;
+            string valor2 = txtValor2.Text;
+            string Res = lblRes.Text;
+            string Operacao = lblOperacao.Text;
+            double v1 = Convert.ToDouble(valor1);
+            double v2 = Convert.ToDouble(valor2);
+            double calc;
 
-            switch (operacao)
+            switch (Operacao)
             {
                 case "+":
-                    res = doubleValor1 + doubleValor2;
-                    Resultado.Text = Convert.ToString(res);
+                    calc = v1 + v2;
+                    lblRes.Text = Convert.ToString(calc);
                     break;
                 case "-":
-                    res = doubleValor1 - doubleValor2;
-                    Resultado.Text = Convert.ToString(res);
+                    calc = v1 - v2;
+                    lblRes.Text = Convert.ToString(calc);
                     break;
                 case "*":
-                    res = doubleValor1 * doubleValor2;
-                    Resultado.Text = Convert.ToString(res);
+                    calc = v1 * v2;
+                    lblRes.Text = Convert.ToString(calc);
                     break;
                 case "/":
-                    res = doubleValor1 / doubleValor2;
-                    Resultado.Text = Convert.ToString(res);
+                    calc = v1 / v2;
+                    lblRes.Text = Convert.ToString(calc);
                     break;
                 default:
-                    MessageBox.Show("Selecine uma operação");
-                    return;
+                    MessageBox.Show("Selecione uma operação");
                     break;
             }
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSoma_Click(object sender, EventArgs e)
         {
-            string valor1q = valor1.Text;
-            string valor2q = valor2.Text;
 
-            if (!valor1q.All(char.IsNumber))
+            string valor1 = txtValor1.Text;
+            string valor2 = txtValor2.Text;
+            string Res = lblRes.Text;
+
+
+            if (Validar())
             {
-                Resultado.Text = "O valor 1 deve ser um numero";
+                double calcular = Convert.ToDouble(valor1) + Convert.ToDouble(valor2);
+                lblRes.Text = $"{calcular}";
                 return;
             }
 
-            if (string.IsNullOrEmpty(valor1q) || string.IsNullOrEmpty(valor2q))
-            {
-                Resultado.Text = "digite um numero";
-                return;
-            }
 
-            double doubleValor1 = Convert.ToDouble(valor1q);
-            double doubleValor2 = Convert.ToDouble(valor2q);
-
-            double resultadoq = doubleValor1 - doubleValor2;
-
-            Resultado.Text = resultadoq.ToString();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSub_Click(object sender, EventArgs e)
         {
-            string valor1q = valor1.Text;
-            string valor2q = valor2.Text;
+            string valor1 = txtValor1.Text;
+            string valor2 = txtValor2.Text;
+            string Res = lblRes.Text;
 
-            if (!valor1q.All(char.IsNumber))
+            if (Validar())
             {
-                Resultado.Text = "O valor 1 deve ser um numero";
+                double calcular = Convert.ToDouble(valor1) - Convert.ToDouble(valor2);
+                lblRes.Text = $"{calcular}";
                 return;
             }
-
-            if (string.IsNullOrEmpty(valor1q) || string.IsNullOrEmpty(valor2q))
-            {
-                Resultado.Text = "digite um numero";
-                return;
-            }
-
-            double doubleValor1 = Convert.ToDouble(valor1q);
-            double doubleValor2 = Convert.ToDouble(valor2q);
-
-            double resultadoq = doubleValor1 * doubleValor2;
-
-            Resultado.Text = resultadoq.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMult_Click(object sender, EventArgs e)
         {
-            string valor1q = valor1.Text;
-            string valor2q = valor2.Text;
+            string valor1 = txtValor1.Text;
+            string valor2 = txtValor2.Text;
+            string Res = lblRes.Text;
 
-            if (!valor1q.All(char.IsNumber))
+            if (Validar())
             {
-                Resultado.Text = "O valor 1 deve ser um numero";
+                double calcular = Convert.ToDouble(valor1) * Convert.ToDouble(valor2);
+                lblRes.Text = $"{calcular}";
                 return;
             }
-
-            if (string.IsNullOrEmpty(valor1q) || string.IsNullOrEmpty(valor2q))
-            {
-                Resultado.Text = "digite um numero";
-                return;
-            }
-
-            double doubleValor1 = Convert.ToDouble(valor1q);
-            double doubleValor2 = Convert.ToDouble(valor2q);
-
-            double resultadoq = doubleValor1 / doubleValor2;
-
-            Resultado.Text = resultadoq.ToString();
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnDiv_Click(object sender, EventArgs e)
+        {
+            string valor1 = txtValor1.Text;
+            string valor2 = txtValor2.Text;
+            string Res = lblRes.Text;
+
+            if (Validar())
+            {
+                double calcular = Convert.ToDouble(valor1) / Convert.ToDouble(valor2);
+                lblRes.Text = $"{calcular}";
+                return;
+            }
+        }
+
+        private void radioSoma_CheckedChanged(object sender, EventArgs e)
+        {
+            lblOperacao.Text = "+";
+        }
+
+        private void radioSub_CheckedChanged(object sender, EventArgs e)
+        {
+            lblOperacao.Text = "-";
+        }
+
+        private void radioMult_CheckedChanged(object sender, EventArgs e)
+        {
+            lblOperacao.Text = "*";
+        }
+
+        private void radioDiv_CheckedChanged(object sender, EventArgs e)
+        {
+            lblOperacao.Text = "/";
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            lblErro.Text = "";
+            if (Validar())
+            {
+                Calcular();
+            }
+
+        }
+
+        private void perimetorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 novaAba = new Form1();
-            this.Hide();
+            //this.Hide();
             novaAba.Show();
         }
 
-        private void Soma_CheckedChanged(object sender, EventArgs e)
+        private void esferasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label2.Text = "+";
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            label2.Text = "-";
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            label2.Text = "/";
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            label2.Text = "*";
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            string valor1q = valor1.Text;
-            string valor2q = valor2.Text;
-
-            if (!valor1q.All(char.IsNumber))
-            {
-                Resultado.Text = "O valor deve ser um numero";
-                return;
-            }
-
-            if (string.IsNullOrEmpty(valor1q) || string.IsNullOrEmpty(valor2q))
-            {
-                Resultado.Text = "digite um numero";
-                return;
-            }
-
-            double doubleValor1 = Convert.ToDouble(valor1q);
-            double doubleValor2 = Convert.ToDouble(valor2q);
-
-            double resultadoq = doubleValor1 + doubleValor2;
-
-            Resultado.Text = resultadoq.ToString();
-        }
-
-        private void formatosQRToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form2 form = new Form2();
-            form.Show();
-        }
-
-        private void valor1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void esferaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form3 form = new Form3();
-            form.Show();
+            Form3 novaAbaEsfera = new Form3();
+            novaAbaEsfera.Show();
         }
     }
-
 }

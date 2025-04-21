@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace calculadora
+﻿namespace Calculadora
 {
     public partial class Form3 : Form
     {
@@ -17,34 +7,109 @@ namespace calculadora
             InitializeComponent();
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e)
+        private bool Validar()
         {
-            double raio = double.Parse(txtRaio.Text);
+            string valorRaio = txtRaio.Text;
 
-            if (rbtnDiametro.Checked)
+
+            if (string.IsNullOrWhiteSpace(valorRaio))
             {
-                double diametro = 2 * raio;
-                lblResultado.Text = "Diâmetro: " + diametro;
+                lblErro.Text = "Valor obrigatório";
+                return false;
             }
-            else if (rbtnPerimetro.Checked)
+
+            try
             {
-                double perimetro = 2 * Math.PI * raio;
-                lblResultado.Text = "Perímetro (Circunferência): " + perimetro;
+                Convert.ToDouble(valorRaio);
+                return true;
             }
-            else if (rbtnArea.Checked)
+            catch
             {
-                double area = Math.PI * Math.Pow(raio, 2);
-                lblResultado.Text = "Área: " + area;
+                lblErro.Text = "Digite somente números";
+                return false;
             }
-            else if (rbtnVolume.Checked)
+
+
+        }
+
+        private void Calcular()
+        {
+            double valorRaio = Convert.ToDouble(txtRaio.Text);
+
+
+            if (radioPer.Checked)
             {
-                double volume = (4 / 3) * Math.PI * Math.Pow(raio, 3);
-                lblResultado.Text = "Volume: " + volume;
+                lblRes.Text = $"Perímetro: {2 * Math.PI * valorRaio:F2} ";
+                return;
             }
-            else
+
+            if (radioDia.Checked)
             {
-                lblResultado.Text = "Selecione uma operação.";
+                lblRes.Text = $"Diametro: {2 * valorRaio} ";
+                return;
             }
+
+            if (radioArea.Checked)
+            {
+                lblRes.Text = $"Área: {Math.PI * Math.Pow(valorRaio, 2):F2}";
+                return;
+            }
+
+            if (radioVol.Checked)
+            {
+                lblRes.Text = $"Volume: {(4.0 / 3.0) * Math.PI * Math.Pow(valorRaio, 3):F2} ";
+                return;
+            }
+        }
+
+
+
+        private void radioPer_CheckedChanged(object sender, EventArgs e)
+        {
+            lblErro.Text = "";
+        }
+
+        private void radioDia_CheckedChanged(object sender, EventArgs e)
+        {
+            lblErro.Text = "";
+        }
+
+        private void radioArea_CheckedChanged(object sender, EventArgs e)
+        {
+            lblErro.Text = "";
+        }
+
+        private void radioVol_CheckedChanged(object sender, EventArgs e)
+        {
+            lblErro.Text = "";
+        }
+
+        private void btncalcular_Click(object sender, EventArgs e)
+        {
+            lblErro.Text = "";
+            if (!Validar())
+            {
+                return;
+            }
+            Calcular();
+        }
+
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
+
+        private void quadradoRetânguloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
+        private void esferaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
         }
     }
 }
